@@ -13,6 +13,14 @@
 }
 /* header styles */
 
+/* definition section styles */
+.flex-container {
+   display: flex;
+   flex-direction:column;
+   width: 25%;
+   margin: 8px;
+}
+
 /* language buttons */
 #lang-one {
    background-color: var(--tertiary-color);
