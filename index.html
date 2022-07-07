@@ -14,16 +14,30 @@
   </head>
   <body>
     <!--hero and navigation-->
-    <header>
-      <h1>Title of App</h1>
-      <a href="favorites.html">Study Words</a>
+    <header class="mui-container-fluid">
+      <div class="mui-row">
+        <h1 class="mui-col-md-8 mui-col-xs-12">Title of App</h1>
+        <a href="favorites.html" class="mui-col-md-4 mui-col-xs-6"
+          >Study Words</a
+        >
+      </div>
     </header>
     <main>
       <!--definitions section-->
       <section>
         <form>
-          <input type="text" id="word" name="word" />
-          <button type="button">Define</button>
+          <input
+            type="text"
+            id="word"
+            name="word"
+            placeholder="Choose your word"
+          />
+          <button
+            type="button"
+            class="mui-btn mui-btn--raised mui-btn--primary"
+          >
+            Define
+          </button>
         </form>
       </section>
       <section>
@@ -32,9 +46,30 @@
       </section>
       <!--translation section-->
       <section>
-        <button type="button" data-language>Language 1</button>
-        <button type="button" data-language>Language 2</button>
-        <button type="button" data-langauge>Language 3</button>
+        <button
+          type="button"
+          class="mui-btn mui-btn--raised"
+          id="lang-one"
+          data-language
+        >
+          Language 1
+        </button>
+        <button
+          type="button"
+          class="mui-btn mui-btn--raised"
+          id="lang-two"
+          data-language
+        >
+          Language 2
+        </button>
+        <button
+          type="button"
+          class="mui-btn mui-btn--raised"
+          id="lang-three"
+          data-langauge
+        >
+          Language 3
+        </button>
       </section>
       <section>
         <h2>Translation:</h2>
