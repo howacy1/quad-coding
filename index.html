@@ -13,11 +13,41 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!--
-
-    content goes here
-
-    -->
+    <!--hero and navigation-->
+    <header>
+      <h1>Title of App</h1>
+      <a href="favorites.html">Study Words</a>
+    </header>
+    <main>
+      <!--definitions section-->
+      <section>
+        <form>
+          <input type="text" id="word" name="word" />
+          <button type="button">Define</button>
+        </form>
+      </section>
+      <section>
+        <h2>Definition:</h2>
+        <div id="definition-container"></div>
+      </section>
+      <!--translation section-->
+      <section>
+        <button type="button" data-language>Language 1</button>
+        <button type="button" data-language>Language 2</button>
+        <button type="button" data-langauge>Language 3</button>
+      </section>
+      <section>
+        <h2>Translation:</h2>
+        <div id="translation-container"></div>
+      </section>
+    </main>
+    <footer>
+      <h3>A Quad-Coding App 2022</h3>
+      <div>
+        <h4>Find our team:</h4>
+        <a href="#">Test</a>
+      </div>
+    </footer>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
