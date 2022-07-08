@@ -1,5 +1,15 @@
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-}
+:root {
+    --background-main: #FFFCF9;
+    --primary-color: #26547C;
+    --secondary-color: #EF476F;
+    --tertiary-color: #FFD166;
+    --quad-color: #06D6A0;
+ }
+ 
+ * {
+    background-color: var(--background-main);
+    font-family:Georgia, 'Times New Roman', Times, serif
+ }
+ .word-list{
+    padding: 20px;
+ }
