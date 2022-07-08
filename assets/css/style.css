@@ -12,13 +12,33 @@
    font-family:Georgia, 'Times New Roman', Times, serif
 }
 /* header styles */
+.hero {
+   margin-bottom: 50px;
+}
+
+/* footer styles */
+.flex-container-row {
+   display: flex;
+   flex-direction: row;
+}
+
+.team {
+   background-color: var(--secondary-color);
+   text-align: center;
+   margin-top: 150px;
+}
+
+.member {
+   padding: 10px;
+   font-size: 18px;
+}
 
 /* definition section styles */
 .flex-container {
    display: flex;
    flex-direction:column;
    width: 25%;
-   margin: 8px;
+   margin-bottom: 50px;
 }
 
 /* language buttons */
