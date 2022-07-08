@@ -53,3 +53,28 @@
 #lang-three {
    background-color: var(--quad-color);
 }
+
+/* media queries for responsive design begin */
+@media screen and (max-width: 980) {
+   .flex-container {
+      margin-bottom: 0;
+   }
+
+   .team {
+      margin-top: 0;
+   }
+
+   .hero {
+      margin-bottom: 0;
+   }
+}
+
+/* tablets and smaller */
+@media screen and (max-width: 768px) {
+
+}
+
+/* mobile phones and smaller */
+@media screen and (max-width: 575px) {
+
+}
