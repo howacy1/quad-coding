@@ -1,0 +1,80 @@
+/* universal styles */
+:root {
+   --background-main: #FFFCF9;
+   --primary-color: #26547C;
+   --secondary-color: #EF476F;
+   --tertiary-color: #FFD166;
+   --quad-color: #06D6A0;
+}
+
+* {
+   background-color: var(--background-main);
+   font-family:Georgia, 'Times New Roman', Times, serif
+}
+/* header styles */
+.hero {
+   margin-bottom: 50px;
+}
+
+/* footer styles */
+.flex-container-row {
+   display: flex;
+   flex-direction: row;
+}
+
+.team {
+   background-color: var(--secondary-color);
+   text-align: center;
+   margin-top: 150px;
+}
+
+.member {
+   padding: 10px;
+   font-size: 18px;
+}
+
+/* definition section styles */
+.flex-container {
+   display: flex;
+   flex-direction:column;
+   width: 25%;
+   margin-bottom: 50px;
+}
+
+/* language buttons */
+#lang-one {
+   background-color: var(--tertiary-color);
+}
+
+#lang-two {
+   background-color: var(--secondary-color);
+}
+
+#lang-three {
+   background-color: var(--quad-color);
+}
+
+/* media queries for responsive design begin */
+@media screen and (max-width: 980) {
+   .flex-container {
+      margin-bottom: 0;
+   }
+
+   .team {
+      margin-top: 0;
+   }
+
+   .hero {
+      margin-bottom: 0;
+   }
+}
+
+/* tablets and smaller */
+@media screen and (max-width: 768px) {
+
+}
+
+/* mobile phones and smaller */
+@media screen and (max-width: 575px) {
+
+}

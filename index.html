@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.muicss.com/mui-0.10.3/css/mui.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Title of App</title>
+  </head>
+  <body>
+    <!--hero and navigation-->
+    <header class="mui-container-fluid">
+      <div class="mui-row hero">
+        <h1 class="mui-col-md-8 mui-col-xs-12 mui--text-center">
+          Title of App
+        </h1>
+        <a href="favorites.html" class="mui-col-md-4 mui-col-xs-6 favorite"
+          >Study Words</a
+        >
+      </div>
+    </header>
+    <main class="mui-container-fluid">
+      <!--definitions section-->
+      <section class="mui-row">
+        <form class="flex-container mui-col-xs-6 mui-col-md-4">
+          <h2>Choose your Word</h2>
+          <input
+            type="text"
+            id="word-text"
+            name="word"
+            placeholder="Choose your word"
+          />
+          <button
+            type="button"
+            class="mui-btn mui-btn--raised mui-btn--primary"
+            id="define"
+          >
+            Define
+          </button>
+        </form>
+        <div class="mui-col-xs-12 mui-col-md-8">
+          <h2 class="mui--text-center">Definition:</h2>
+          <div id="definition-container"></div>
+        </div>
+      </section>
+      <!--translation section-->
+      <section class="mui-row mui-col-xs-6 mui-col-md-4 flex-container">
+        <h2>Choose your Language</h2>
+        <div id="language-buttons">
+            <button
+                type="button"
+                class="mui-btn mui-btn--raised"
+                id="lang-one"
+                data-language="es"
+            >
+                Spanish
+            </button>
+            <button
+                type="button"
+                class="mui-btn mui-btn--raised"
+                id="lang-two"
+                data-language="fr"
+            >
+                French
+            </button>
+            <button
+                type="button"
+                class="mui-btn mui-btn--raised"
+                id="lang-three"
+                data-language="ja"
+            >
+                Japanese
+            </button>
+        </div>
+      </section>
+      <section>
+        <h2 class="mui--text-center mui-col-xs-12 mui-col-md-8">
+          Translation:
+        </h2>
+        <div id="translated-container"></div>
+      </section>
+    </main>
+    <footer>
+      <h3 class="team">A Quad-Coding App 2022</h3>
+      <div class="flex-container-row">
+        <h4>Find our team:</h4>
+        <a href="#" class="member">Test</a>
+        <a href="#" class="member">Test</a>
+        <a href="#" class="member">Test</a>
+        <a href="#" class="member">Test</a>
+        <a href="#" class="member">Test</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
