@@ -1,4 +1,7 @@
 // when spanish button is clicked, translate word from text box into spanish and display in translated text box
+// - need function to handle click event
+// - need function to call the translate endpoint with a given word and language code
+// - need function to display translated text
 
 // variables from html page used in js functions
 var wordText = document.querySelector("#word-text");
@@ -8,12 +11,13 @@ var translatedBoxContainerEl = document.querySelector("#translated-container");
 //  function handles when when user clicks one of the the language buttons to translate
 var buttonLanguageTranslate = function(event) {
     // gets the language code from the clicked element, gets the text the user wants to translate from the word text box
-    var language = event.target.getAttribute("language-code");
+    var language = event.target.getAttribute("data-language");
     var userText = wordText.value.trim();
+
     
     // if things are entered then runs the translate function and inputting the text and language code
     if (language && userText) {
-      getTranslatedText(userText, language);
+      getTranslatedText(userText, language, displayTranslatedText);
   
       // clear old content
       translatedBoxContainerEl.textContent = "";
@@ -25,7 +29,7 @@ var buttonLanguageTranslate = function(event) {
 };
 
 // function that translates the text
-var getTranslatedText = function(text, langugeCode) {
+var getTranslatedText = function(text, langugeCode, callback) {
 
     // this is how the rapidAPI tutorial shows getting a request from the google translate api, they had it hard coded with strings.
     // hoping the text and languageCode work as expected here. not really sure on the new URLSearchParams().
@@ -50,10 +54,13 @@ var getTranslatedText = function(text, langugeCode) {
 
     // makes request to google translate API, using the options variable
     fetch('https://google-translate1.p.rapidapi.com/language/translate/v2', options)
-        // need to run display function to then display the translated text
-        // something like if response.ok, response.json().then(function(data) {, displayTranslatedText(response)}
-        .then(response => response.json())
-        .then(response => console.log(response))
+        .then(function(response) {
+            response.json().then(function(data) {
+                var translatedText = data.data.translations[0].translatedText;
+                callback(translatedText);
+            });
+
+        })
         // if error alerts error to user
         .catch(err => alert(err));
     
