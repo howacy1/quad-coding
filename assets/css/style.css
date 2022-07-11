@@ -67,6 +67,10 @@
    .hero {
       margin-bottom: 0;
    }
+
+   .h3 {
+      text-align: center;
+   }
 }
 
 /* tablets and smaller */
