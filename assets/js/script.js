@@ -74,3 +74,29 @@ var displayTranslatedText = function (translatedText) {
 
 // when one of the languages to translate into is clicked, this catches that action from that div
 languageButtonsEl.addEventListener("click", buttonLanguageTranslate);
+
+// ---Abbey comments start here---
+var wordlistEl = document.querySelector(".word-list"); //selects the <section> element on favorites.html
+var wordsArr = []; // an array to hold the words(that are also the keys to the translation values)
+
+//function to create the divs/append to page(would go/get called INSIDE the below fucntion), containing the word from storage(key) and the translation(value)..
+var createFavs = function () {
+  var wordDiv = document.createElement("div"); //2 divs with coreect classes added here..
+  $(wordDiv).addClass("mui-col-md-3 mui--text-accent");
+  var wordTrans = dicument.createElement("div");
+  $(wordTrans).addClass("mui-col-md-9");
+  //code needs to go here to get the word value from the array of words saved and
+  //get the translation values from the local storage, stored with the words as keys..
+  //and put those values in the appropriate divs before appending...
+  wordlistEl.appendChild(wordDiv);
+  wordlistEl.appendChild(wordTrans);
+};
+
+//function to save word/ translation key/value pair
+var saveWords = function () {
+  wordsArr.push(userText); //first push word to the array
+  console.log(wordsArr);
+  var transEl = document.querySelector("#translation-container"); //select the div that will have the dynamiclly created translation text
+  var translation = transEl.textContent; //select the text inside that div
+  JSON.stringify(localStorage.setItem(userText, translation)); // set the user word input and translation key/values to local storage..
+};
