@@ -18,11 +18,24 @@
       <h1>Word Study Favorites</h1>
     </header>
 
-    <div class="mui-container-fluid">
-      <div class="mui-row word-list">
+    <!-- large container for word / translation key-value pairs from local storage -->
+    <container class="mui-container-fluid">
+      <!--?? we might need to just dynamically create the 2 divs with the 'get from local storage'
+      function each time the save button pressed or on load page. and add the classes as shown in 
+      the placeholder divs for this same look... otherwise, only finite # of div spaces to fill with words  ??-->
+
+      <!--this would actually be the one hard-coded section div, a couple examples here of how dynamically
+      created divs would stack up in this mui-row div..-->
+      <section class="mui-row word-list flex-container">
         <div class="mui-col-md-3 mui--text-accent">Word placeholder</div>
         <div class="mui-col-md-9">Translation placeholder</div>
-      </div>
+        <div class="mui-col-md-3 mui--text-accent">Word placeholder</div>
+        <div class="mui-col-md-9">Translation placeholder</div>
+        <div class="mui-col-md-3 mui--text-accent">Word placeholder</div>
+        <div class="mui-col-md-9">Translation placeholder</div>
+      </section>
+
+      <!-- from here down the div code will be earased -->
       <div class="mui-divider"></div>
       <div class="mui-row word-list">
         <div class="mui-col-md-3 mui--text-accent">Word placeholder</div>
@@ -38,9 +51,9 @@
         <div class="mui-col-md-3 mui--text-accent">Word placeholder</div>
         <div class="mui-col-md-9">Translation placeholder</div>
       </div>
-    </div>
+    </container>
     <footer class="mui--text-center">
-      <button class="mui-btn mui-btn--accent">
+      <button type="button" class="mui-btn mui-btn--raised mui-btn--accent">
         <a href="./index.html">Homepage</a>
       </button>
     </footer>
