@@ -71,32 +71,48 @@ var displayTranslatedText = function (translatedText) {
   translatedTextEl.textContent = translatedText;
   translatedBoxContainerEl.appendChild(translatedTextEl);
 };
-
 // when one of the languages to translate into is clicked, this catches that action from that div
 languageButtonsEl.addEventListener("click", buttonLanguageTranslate);
 
-// ---Abbey comments start here---
-var wordlistEl = document.querySelector(".word-list"); //selects the <section> element on favorites.html
-var wordsArr = []; // an array to hold the words(that are also the keys to the translation values)
+// ---Abbey comments start here, Sarah's attempt at the storage/ favorites page logic below---
 
-//function to create the divs/append to page(would go/get called INSIDE the below fucntion), containing the word from storage(key) and the translation(value)..
+var saveEl = document.querySelector("#save"); //selects save button as a variable
+var wordlistEl = document.querySelector(".word-list"); //selects the <section> element on favorites.html
+var wordsArr = []; // ? an array to hold the words(that are also the keys to the translation values)..to be
+//used in the for loop?
+
+//**function to create the divs/append to page(would go/get called INSIDE the below function but also
+//called upon load page), containing the word from storage(key) and the translation(value)..
 var createFavs = function () {
-  var wordDiv = document.createElement("div"); //2 divs with coreect classes added here..
-  $(wordDiv).addClass("mui-col-md-3 mui--text-accent");
-  var wordTrans = dicument.createElement("div");
-  $(wordTrans).addClass("mui-col-md-9");
-  //code needs to go here to get the word value from the array of words saved and
-  //get the translation values from the local storage, stored with the words as keys..
-  //and put those values in the appropriate divs before appending...
-  wordlistEl.appendChild(wordDiv);
-  wordlistEl.appendChild(wordTrans);
+  wordsArr = JSON.parse(localStorage.getItem(array)); //set 'wordsArr' array equal to full array in local storage
+  if (userText) {
+    // push new word to the wordsArr array IF a new userText value exists(not on load page)
+    wordsArr.push(userText);
+  }
+  //?start for loop to loop through array in storage to get keys(words) and translations?
+  for (i = 0; i < wordsArr.length; i++) {
+    var wordDiv = document.createElement("div"); //2 divs with coreect classes added here..
+    $(wordDiv).addClass("mui-col-md-3 mui--text-accent");
+    var wordTrans = document.createElement("div");
+    $(wordTrans).addClass("mui-col-md-9");
+    var wrd = JSON.parse(localStorage.getItem(array[i])); //get 'i' element(word) in the stored array
+    var def = localStorage.getItem(wrd); // get the translation value of that word in local storage
+    wordDiv.textContent = wrd; //put the word in the div
+    wordTrans.textContent = def; // put the definition in other div
+
+    wordlistEl.appendChild(wordDiv); //appending both divs to the large wordlistEL section on the favorites page
+    wordlistEl.appendChild(wordTrans);
+  }
 };
 
-//function to save word/ translation key/value pair
-var saveWords = function () {
-  wordsArr.push(userText); //first push word to the array
-  console.log(wordsArr);
+//**function to save word/ translation key/value pair and get onto favs page, upon
+//save button click..
+var saveWord = function () {
+  //
   var transEl = document.querySelector("#translation-container"); //select the div that will have the dynamiclly created translation text
   var translation = transEl.textContent; //select the text inside that div
-  JSON.stringify(localStorage.setItem(userText, translation)); // set the user word input and translation key/values to local storage..
+  localStorage.setItem(userText, translation); // set the new user word input and translation key/values to local storage..
+  createFavs(); //call this here ?  and upon load of page too?
 };
+
+saveEl.addEventListener("click", saveWord); //listens for save button click
