@@ -3,6 +3,9 @@
 var wordText = document.querySelector("#word-text");
 var languageButtonsEl = document.querySelector("#language-buttons");
 var translatedBoxContainerEl = document.querySelector("#translated-container");
+var saveEl = document.querySelector("#save"); //selects save button as a variable
+var wordlistEl = document.querySelector(".word-list"); //selects the <section> element on favorites.html
+var wordsArr = []; // ? an array to hold the words(that are also the keys to the translation values)..to be
 
 //  function handles when when user clicks one of the the language buttons to translate
 var buttonLanguageTranslate = function (event) {
@@ -40,17 +43,14 @@ var getTranslatedText = function (text, langugeCode, callback) {
     method: "POST",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": "e0dde8d346mshc3dc29fff2e98a7p1e2eadjsnc63eb90e755c",
+      "X-RapidAPI-Key": "0d16679771mshea6b14e799fc8e1p185fe4jsn3e3356e733e8",
       "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
     },
-    body: encodedParams,
+    body: encodedParams
   };
 
   // makes request to google translate API, using the options variable
-  fetch(
-    "https://google-translate1.p.rapidapi.com/language/translate/v2",
-    options
-  )
+  fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", options)
     .then(function (response) {
       response.json().then(function (data) {
         var translatedText = data.data.translations[0].translatedText;
@@ -68,13 +68,11 @@ var displayTranslatedText = function (translatedText) {
   translatedBoxContainerEl.appendChild(translatedTextEl);
 };
 // when one of the languages to translate into is clicked, this catches that action from that div
-languageButtonsEl.addEventListener("click", buttonLanguageTranslate);
+
 
 // ---Abbey comments start here, Sarah's attempt at the storage/ favorites page logic below---
 
-var saveEl = document.querySelector("#save"); //selects save button as a variable
-var wordlistEl = document.querySelector(".word-list"); //selects the <section> element on favorites.html
-var wordsArr = []; // ? an array to hold the words(that are also the keys to the translation values)..to be
+
 //used in the for loop?
 
 //**function to create the divs/append to page(would go/get called INSIDE the below function but also
@@ -111,3 +109,4 @@ var saveWord = function () {
 };
 
 saveEl.addEventListener("click", saveWord); //listens for save button click
+languageButtonsEl.addEventListener("click", buttonLanguageTranslate);
