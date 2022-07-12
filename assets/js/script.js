@@ -46,11 +46,14 @@ var getTranslatedText = function (text, langugeCode, callback) {
       "X-RapidAPI-Key": "0d16679771mshea6b14e799fc8e1p185fe4jsn3e3356e733e8",
       "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
     },
-    body: encodedParams
+    body: encodedParams,
   };
 
   // makes request to google translate API, using the options variable
-  fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", options)
+  fetch(
+    "https://google-translate1.p.rapidapi.com/language/translate/v2",
+    options
+  )
     .then(function (response) {
       response.json().then(function (data) {
         var translatedText = data.data.translations[0].translatedText;
@@ -69,9 +72,7 @@ var displayTranslatedText = function (translatedText) {
 };
 // when one of the languages to translate into is clicked, this catches that action from that div
 
-
 // ---Abbey comments start here, Sarah's attempt at the storage/ favorites page logic below---
-
 
 //used in the for loop?
 
@@ -102,8 +103,10 @@ var createFavs = function () {
 //**function to save word/ translation key/value pair and get onto favs page, upon
 //save button click..
 var saveWord = function () {
-  //
-  var translation = translatedBoxContainerEl.textContent; //select the text inside that div
+  var userText = wordText.value;
+  console.log(userText);
+  var translation = translatedBoxContainerEl.textContent;
+  console.log(translation); //select the text inside that div
   localStorage.setItem(userText, translation); // set the new user word input and translation key/values to local storage..
   createFavs(); //call this here ?  and upon load of page too?
 };
