@@ -10,6 +10,6 @@
     background-color: var(--background-main);
     font-family:Georgia, 'Times New Roman', Times, serif
  }
- .word-list{
-    padding: 20px;
- }
+.word-list{
+   font-size: medium;
+}
