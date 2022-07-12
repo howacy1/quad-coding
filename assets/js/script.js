@@ -109,8 +109,7 @@ var createFavs = function () {
 //save button click..
 var saveWord = function () {
   //
-  var transEl = document.querySelector("#translation-container"); //select the div that will have the dynamiclly created translation text
-  var translation = transEl.textContent; //select the text inside that div
+  var translation = translatedBoxContainerEl.textContent; //select the text inside that div
   localStorage.setItem(userText, translation); // set the new user word input and translation key/values to local storage..
   createFavs(); //call this here ?  and upon load of page too?
 };
