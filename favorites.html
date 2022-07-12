@@ -15,7 +15,7 @@
   </head>
   <body>
     <header class="header mui--text-center">
-      <h1>Word Study Favorites</h1>
+      <h1 class="study">Word Study Favorites</h1>
     </header>
 
     <!-- large container for word / translation key-value pairs from local storage -->
@@ -26,13 +26,13 @@
 
       <!--this would actually be the one hard-coded section div, a couple examples here of how dynamically
       created divs would stack up in this mui-row div..-->
-      <section class="mui-row word-list flex-container"></section>
+      <div class="mui-row flex-container" id="word-list"></div>
     </container>
     <footer class="mui--text-center">
       <button type="button" class="mui-btn mui-btn--raised mui-btn--accent">
         <a href="./index.html">Homepage</a>
       </button>
     </footer>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/favs.js"></script>
   </body>
 </html>
