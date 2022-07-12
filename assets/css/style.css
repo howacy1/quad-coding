@@ -8,9 +8,13 @@
 }
 
 * {
-   background-color: var(--background-main);
    font-family:Georgia, 'Times New Roman', Times, serif;
    box-sizing: border-box;
+}
+
+/* body styles */
+body {
+   background-color: var(--background-main);
 }
 /* header styles */
 
