@@ -1,8 +1,4 @@
-// when spanish button is clicked, translate word from text box into spanish and display in translated text box
-// - need function to handle click event
-// - need function to call the translate endpoint with a given word and language code
-// - need function to display translated text
-
+// top of code vars
 // variables from html page used in js functions
 var wordText = document.querySelector("#word-text");
 var languageButtonsEl = document.querySelector("#language-buttons");
