@@ -50,14 +50,6 @@ h1 {
    flex-direction:column;
    max-width: fit-content;
 }
-/* solving button issue ideas
-button:active {
-   color: var(--primary-color);
-}
-
-javascript
-see css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
-
 
 /* language buttons */
 #lang-one {
@@ -70,6 +62,10 @@ see css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
 
 #lang-three {
    background-color: var(--quad-color);
+}
+
+.trans {
+   padding-left: 199px;
 }
 
 /* media queries for responsive design begin */
@@ -92,8 +88,7 @@ see css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
 @media screen and (max-width: 768px) {
    #background {
       opacity: 0;
-      width: 0%;
-      
+      width: 0%;  
    }
 
    .members {
@@ -109,8 +104,17 @@ see css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
       margin: 10px 0;
    }
 
+   .trans {
+      padding-left: 0;
+      text-align: center;
+   }
+
    h3 {
       font-size: 15px;;
+   }
+
+   .name {
+      font-size: 15px;
    }
 
 }
