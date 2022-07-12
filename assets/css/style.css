@@ -20,10 +20,12 @@ body {
 
 #background {
   opacity: 0.5;
+  margin: auto;
 }
 
 h1 {
    text-shadow: 2px 2px 4px var(--tertiary-color);
+   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 /* footer styles */
@@ -37,7 +39,7 @@ h1 {
    text-align: center;
 }
 
-.member {
+.name {
    padding: 10px;
    font-size: 18px;
 }
@@ -48,14 +50,6 @@ h1 {
    flex-direction:column;
    max-width: fit-content;
 }
-/* solving button issue ideas
-button:active {
-   color: var(--primary-color);
-}
-
-javascript
-see css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
-
 
 /* language buttons */
 #lang-one {
@@ -70,8 +64,17 @@ see css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
    background-color: var(--quad-color);
 }
 
+.trans {
+   padding-left: 199px;
+}
+
 /* media queries for responsive design begin */
-@media screen and (max-width: 980) {
+@media screen and (max-width: 980px) {
+   #background {
+      width: 75%;
+      margin-left: 100px;
+      margin-right: auto;
+   }
    .flex-container {
       margin-bottom: 0;
    }
@@ -83,10 +86,35 @@ see css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/
 
 /* tablets and smaller */
 @media screen and (max-width: 768px) {
+   #background {
+      opacity: 0;
+      width: 0%;  
+   }
 
+   .members {
+      text-align: center;
+   }
 }
 
 /* mobile phones and smaller */
 @media screen and (max-width: 575px) {
+   .def, .trans {
+      border-bottom: 2px solid var(--quad-color);
+      border-top: 2px solid var(--quad-color);
+      margin: 10px 0;
+   }
+
+   .trans {
+      padding-left: 0;
+      text-align: center;
+   }
+
+   h3 {
+      font-size: 15px;;
+   }
+
+   .name {
+      font-size: 15px;
+   }
 
 }
