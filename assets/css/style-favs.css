@@ -10,11 +10,14 @@
     background-color: var(--background-main);
     font-family:Georgia, 'Times New Roman', Times, serif
  }
-.word-list{
+#word-list{
    font-size: medium;
+   margin:20px;
 }
 .accent{
    color:#EF476F;
-   font-size: medium;
    
 }
+
+
+   

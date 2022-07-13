@@ -8,9 +8,10 @@ var createFavs = function () {
   //for loop to loop through array in storage to get keys(words) and translations
   for (i = 0; i < wordsArr.length; i++) {
     var wordDiv = document.createElement("div"); //2 divs with correct classes added here..
-    wordDiv.classList.add("mui--col-md-6,mui--text-accent"); //not sure if these classes ar working. doesn't appear so
+    wordDiv.classList.add("mui--col-md-6"); //not sure if these classes ar working. doesn't appear so
     var wordTrans = document.createElement("div");
-    wordTrans.classList.add("mui-col-md-6");
+    wordTrans.classList.add("mui-col-md-6", "accent");
+    // wordTrans.classList.add()
     var wrd = wordsArr[i]; //get the 'i' index value from complete local storage array
     var def = localStorage.getItem(wrd); // get the translation value of that word in local storage
 
