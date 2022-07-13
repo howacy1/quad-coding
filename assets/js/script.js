@@ -5,8 +5,8 @@ var defineButtonEl = document.querySelector("#define")
 var translatedBoxContainerEl = document.querySelector("#translated-container");
 var definitionContainerEl = document.querySelector("#definition-container");
 var saveEl = document.querySelector("#save");//selects save button as a variable
-// var wordlistEl = document.querySelector("#word-list"); //selects the <section> element on favorites.html
-// var wordsArr = []; // ? an array to hold the words(that are also the keys to the translation values)..to be
+var wordlistEl = document.querySelector("#word-list"); //selects the <section> element on favorites.html
+var wordsArr = []; // ? an array to hold the words(that are also the keys to the translation values)..to be
 
 // function handles when the define button is clicked
 var buttonDefineWord = function () {
