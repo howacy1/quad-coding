@@ -1,11 +1,55 @@
-// top of code vars
 // variables from html page used in js functions
 var wordText = document.querySelector("#word-text");
 var languageButtonsEl = document.querySelector("#language-buttons");
+var defineButtonEl = document.querySelector("#define")
 var translatedBoxContainerEl = document.querySelector("#translated-container");
-var saveEl = document.querySelector("#save"); //selects save button as a variable
+var definitionContainerEl = document.querySelector("#definition-container");
+var saveEl = document.querySelector("#save");//selects save button as a variable
 // var wordlistEl = document.querySelector("#word-list"); //selects the <section> element on favorites.html
 // var wordsArr = []; // ? an array to hold the words(that are also the keys to the translation values)..to be
+
+// function handles when the define button is clicked
+var buttonDefineWord = function () {
+  var userDefineText = wordText.value.trim();
+    if (userDefineText) {
+      getDefinition(userDefineText, displayDefinition);
+      definitionContainerEl.textContent = "";
+    }
+    else {
+      alert("Please enter text to translate.");
+    }
+};
+
+// function gets the definition of the word that the user entered and then runs the function to display the text
+var getDefinition = function(text, callback) {
+
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "9576f11888mshe5a182c29202f23p153609jsna5a6cd7a5875",
+      "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com"
+    }
+  };
+  
+  fetch("https://wordsapiv1.p.rapidapi.com/words/" + text + "/definitions", options)
+    .then(function (response) {
+      console.log(response);
+      response.json().then(function (data) {
+        var definitionText = data.definitions[0].definition;
+        callback(definitionText);
+      });
+    })
+    // if error alerts error to user
+    .catch((err) => alert(err));
+};
+
+// displays definition text
+var displayDefinition = function(definition) {
+  var definitionTextEl = document.createElement("p");
+  definitionTextEl.textContent = definition;
+  definitionContainerEl.appendChild(definitionTextEl);
+
+};
 
 //  function handles when when user clicks one of the the language buttons to translate
 var buttonLanguageTranslate = function (event) {
@@ -28,8 +72,6 @@ var buttonLanguageTranslate = function (event) {
 
 // function that translates the text
 var getTranslatedText = function (text, langugeCode, callback) {
-  // this is how the rapidAPI tutorial shows getting a request from the google translate api, they had it hard coded with strings.
-  // hoping the text and languageCode work as expected here. not really sure on the new URLSearchParams().
 
   // sets the search parameters to the text and what language the user wants to translate into
   var encodedParams = new URLSearchParams();
@@ -39,21 +81,17 @@ var getTranslatedText = function (text, langugeCode, callback) {
 
   // API stuff and includes search parameters in body
   var options = {
-    // rapidAPI website has this in single quotes in their tutorial, is double ok or no?
     method: "POST",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
-      "X-RapidAPI-Key": "0d16679771mshea6b14e799fc8e1p185fe4jsn3e3356e733e8",
+      "X-RapidAPI-Key": "9576f11888mshe5a182c29202f23p153609jsna5a6cd7a5875",
       "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
     },
     body: encodedParams,
   };
 
   // makes request to google translate API, using the options variable
-  fetch(
-    "https://google-translate1.p.rapidapi.com/language/translate/v2",
-    options
-  )
+  fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", options)
     .then(function (response) {
       response.json().then(function (data) {
         var translatedText = data.data.translations[0].translatedText;
@@ -89,7 +127,9 @@ var saveWord = function () {
   window.location.href = "./favorites.html"; //immediately route to favorites page so rest of the javascript for appending words to that page can run
 };
 
-saveEl.addEventListener("click", saveWord); //listens for save button click
+
 
 // when one of the languages to translate into is clicked, this catches that action from that div
 languageButtonsEl.addEventListener("click", buttonLanguageTranslate);
+saveEl.addEventListener("click", saveWord); //listens for save button click
+defineButtonEl.addEventListener("click", buttonDefineWord);
