@@ -14,6 +14,8 @@ A application that allows a user to input an English word, recieve the definitio
 - CSS
 - JavaScript
 - MUIcss Framework
+- Google Translate API
+- Words API
 
 ## Website
 
