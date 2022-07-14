@@ -9,25 +9,26 @@
       rel="stylesheet"
       type="text/css"
     />
+    <script src="https://cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Title of App</title>
+    <title>Rapid Translator</title>
   </head>
   <body>
     <!--hero and navigation-->
     <header class="mui-container-fluid">
       <div class="mui-row hero">
         <h1 class="mui-col-md-8 mui-col-xs-12 mui--text-center">
-          Title of App
+          Rapid Translator
         </h1>
         <a href="favorites.html" class="mui-col-md-4 mui-col-xs-6 favorite"
-          >Study Words</a
+          >Favorite Study Words Page</a
         >
-      </div>
+        <img id="background" src="https://img.freepik.com/free-vector/diverse-multilingual-people-group-saying-hello_107791-11736.jpg?w=1380&t=st=1657663045~exp=1657663645~hmac=f26149c4c42edf4526ff014b08eca132b8376d1c58c5c0af2a225a01e98583da" alt="diverse group of people saying hello in many langauges.">
     </header>
     <main class="mui-container-fluid">
       <!--definitions section-->
-      <section class="mui-row">
-        <form class="flex-container mui-col-xs-6 mui-col-md-4">
+      <section class="mui-row def-section">
+        <form class="flex-container mui-col-xs-12 mui-col-md-4">
           <h2>Choose your Word</h2>
           <input
             type="text"
@@ -44,60 +45,68 @@
           </button>
         </form>
         <div class="mui-col-xs-12 mui-col-md-8">
-          <h2 class="mui--text-center">Definition:</h2>
-          <div id="definition-container"></div>
+          <h2 class="mui--text-center def">Definition:</h2>
+          <div id="definition-container" class="mui--text-right"></div>
         </div>
       </section>
       <!--translation section-->
-      <section class="mui-row mui-col-xs-6 mui-col-md-4 flex-container">
+      <section class="mui-row mui-col-xs-12 mui-col-md-4 flex-container lang-section">
         <h2>Choose your Language</h2>
         <div id="language-buttons">
-            <button
-                type="button"
-                class="mui-btn mui-btn--raised"
-                id="lang-one"
-                data-language="es"
-            >
-                Spanish
-            </button>
-            <button
-                type="button"
-                class="mui-btn mui-btn--raised"
-                id="lang-two"
-                data-language="fr"
-            >
-                French
-            </button>
-            <button
-                type="button"
-                class="mui-btn mui-btn--raised"
-                id="lang-three"
-                data-language="ja"
-            >
-                Japanese
-            </button>
+          <button
+            type="button"
+            class="mui-btn mui-btn--raised"
+            id="lang-one"
+            data-language="es"
+          >
+            Spanish
+          </button>
+          <button
+            type="button"
+            class="mui-btn mui-btn--raised"
+            id="lang-two"
+            data-language="fr"
+          >
+            French
+          </button>
+          <button
+            type="button"
+            class="mui-btn mui-btn--raised"
+            id="lang-three"
+            data-language="ja"
+          >
+            Japanese
+          </button>
+        </div>
+        <div>
+          <h3>Click here to save your word to Study Words page!</h3>
+          <button
+            type="button"
+            class="mui-btn mui-btn--raised mui-btn--primary"
+            id="save"
+          >
+            Save Favorite
+          </button>
         </div>
       </section>
+
       <section>
-        <h2 class="mui--text-center mui-col-xs-12 mui-col-md-8">
+        <h2 class=" mui-col-xs-12 mui-col-md-8 trans">
           Translation:
         </h2>
-        <div id="translated-container"></div>
+        <div id="translated-container" class="mui--text-right"></div>
       </section>
     </main>
     <footer>
       <h3 class="team">A Quad-Coding App 2022</h3>
-      <div class="flex-container-row">
+      <div class="flex-container-row members">
         <h4>Find our team:</h4>
-        <a href="#" class="member">Test</a>
-        <a href="#" class="member">Test</a>
-        <a href="#" class="member">Test</a>
-        <a href="#" class="member">Test</a>
-        <a href="#" class="member">Test</a>
+        <p></p><a href="https://github.com/gribbler25" class="name" target="blank">gribbler25</a></p><p></p>
+        <a href="https://github.com/howacy1" class="name" target="blank">howacy1</a></p><p></p>
+        <a href="https://github.com/OliviaRamsfield" class="name" target="blank">OliviaRamsfield</a></p>
       </div>
     </footer>
 
-    <script src="https://cdn.muicss.com/mui-0.10.3/js/mui.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
