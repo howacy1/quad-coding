@@ -51,6 +51,10 @@ h1 {
    max-width: fit-content;
 }
 
+p {
+   font-size: 18px;
+}
+
 /* language buttons */
 #lang-one {
    background-color: var(--tertiary-color);
